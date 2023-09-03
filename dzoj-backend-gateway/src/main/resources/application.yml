@@ -1,0 +1,39 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: dzoj-backend-user-service
+          uri: lb://dzoj-backend-user-service
+          predicates:
+            - Path=/api/user/**
+        - id: dzoj-backend-question-service
+          uri: lb://dzoj-backend-question-service
+          predicates:
+            - Path=/api/question/**
+        - id: dzoj-backend-judge-service
+          uri: lb://dzoj-backend-judge-service
+          predicates:
+            - Path=/api/judge/**
+  application:
+    name: dzoj-backend-gateway
+  main:
+    web-application-type: reactive
+server:
+  port: 8101
+knife4j:
+  gateway:
+    # 第一个配置，开启gateway聚合组件
+    enabled: true
+    # ② 第二行配置，设置聚合模式采用discover服务发现的模式
+    strategy: discover
+    discover:
+      # ③ 第三行配置，开启discover模式
+      enabled: true
+      # ④ 第四行配置，聚合子服务全部为Swagger2规范的文档
+      version: swagger2
+# 这个是配置不用看token是否合法 直接通过
+gateway:
+  excludedUrls: /api/user/get/login,/api/user/logout,/user/register,/zhuye,/api/user/login

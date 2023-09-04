@@ -14,13 +14,13 @@ spring:
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/oj?useSSL=FALSE&serverTimezone=UTC
+    url: jdbc:mysql://119.91.249.196:3306/oj
     username: root
     password: dazhou520
   # Redis 配置
   redis:
     database: 1
-    host: localhost
+    host: 127.0.0.1
     port: 6379
     timeout: 5000
   servlet:

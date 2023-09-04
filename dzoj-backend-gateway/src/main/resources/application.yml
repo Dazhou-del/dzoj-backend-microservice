@@ -36,4 +36,4 @@ knife4j:
       version: swagger2
 # 这个是配置不用看token是否合法 直接通过
 gateway:
-  excludedUrls: /api/user/get/login,/api/user/logout,/user/register,/zhuye,/api/user/login
+  excludedUrls: /api/user/get/login,/api/user/logout,/user/register,/zhuye,/api/user/login,user/getLoginUser,/api/user/register

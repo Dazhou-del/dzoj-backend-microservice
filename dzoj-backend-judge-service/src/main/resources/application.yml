@@ -16,13 +16,13 @@ spring:
   # \u6570\u636E\u5E93\u914D\u7F6E
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/oj?useSSL=FALSE&serverTimezone=UTC
+    url: jdbc:mysql://119.91.249.196:3306/oj
     username: root
     password: dazhou520
   # Redis \u914D\u7F6E
   redis:
     database: 1
-    host: localhost
+    host: 127.0.0.1
     port: 6379
     timeout: 5000
   servlet:
@@ -34,7 +34,7 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
   rabbitmq:
-    host: localhost
+    host: 127.0.0.1
     port: 5672
     password: guest
     username: guest

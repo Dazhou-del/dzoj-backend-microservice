@@ -1,0 +1,13 @@
+{
+  "defaultAction": "SCMP_ACT_ALLOW",
+  "syscalls": [
+    {
+      "name": "write",
+      "action": "SCMP_ACT_ALLOW"
+    },
+    {
+      "name": "read",
+      "action": "SCMP_ACT_ALLOW"
+    }
+  ]
+}
